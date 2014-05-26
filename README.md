@@ -1,7 +1,7 @@
 cocos2dx-samples
 ================
 
-Ejemplos para los articulos dedicados a cocos2dx:
+Ejemplos para los artículos dedicados a cocos2dx:
 http://www.dgzornoza.com/
 
 

@@ -1,7 +1,9 @@
 cocos2dx-samples
 ================
 
-Ejemplos para los articulos dedicados a cocos2dx
+Ejemplos para los articulos dedicados a cocos2dx:
+http://www.dgzornoza.com/
+
 
 
 Los ejemplos estan desarrollados para la version cocos2dx 3.0

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<GameProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectDir>\\vmware-host\Shared Folders\Samples\Samples</ProjectDir>
+  <Version>1.6.0.0</Version>
+  <Resources>\\vmware-host\Shared Folders\Samples\Samples</Resources>
+  <Name>Samples</Name>
+  <JsonFileName>Samples.json</JsonFileName>
+  <CanvasSize>
+    <Width>480</Width>
+    <Height>320</Height>
+  </CanvasSize>
+  <filePath>\\vmware-host\Shared Folders\Samples\Samples\Samples.xml.ccsproj</filePath>
+  <ProjectType>GameProject</ProjectType>
+  <ResRelativePath />
+  <ResProjFolder>\\vmware-host\Shared Folders\Samples\Samples\CocosStudio\ccsprojs</ResProjFolder>
+  <AssetsDir>\\vmware-host\Shared Folders\Samples\Samples\CocosStudio\assets</AssetsDir>
+  <LanaguageType>cpp</LanaguageType>
+</GameProject>

@@ -1,5 +1,4 @@
 #include "AppDelegate.h"
-#include "MainMenuScene.h"
 
 using namespace cocos2d;
 
@@ -54,17 +53,17 @@ bool AppDelegate::applicationDidFinishLaunching()
 	if (screenSize.width > 960)
     {
 		resourceSize = Size(1920, 1280);
-        searchPaths.push_back("HDR");
+        searchPaths.push_back("MainMenu/HDR");
     }
 	else if (screenSize.width > 480)
     {
         resourceSize = Size(960, 640);
-        searchPaths.push_back("HD");
+        searchPaths.push_back("MainMenu/HD");
     }
 	else
 	{
 		resourceSize = Size(480, 320);
-		searchPaths.push_back("SD");
+		searchPaths.push_back("MainMenu/SD");
 	}
 
 	// establecer el factor de escala basado en el tamaño de los recursos y las dimensiones de diseño
@@ -77,7 +76,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 	// ----------------------------------------------------------
 	
     // Crear la escena principal y ejecutarla
-	MainMenuScene* scene = MainMenuScene::create();
+	Scene* scene = BasicScene<MainMenuLayer>::create();
     director->runWithScene(scene);
 
     return true;

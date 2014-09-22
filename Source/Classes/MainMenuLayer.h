@@ -5,6 +5,8 @@
 #include "ui/CocosGUI.h"
 #include "cocostudio\CocoStudio.h"
 
+#include "Headers.h"
+
 /** 
 *@brief Clase con la capa del menu principal
 */
@@ -22,14 +24,13 @@ public:
 	*/
 	CREATE_FUNC(MainMenuLayer);
 
-
 	// se hace uso de la macro de cocos2dx para definir el acceso de metodos heredados
 	// con la finalidad de no violar el principio de sustitucion de Liskov y usar el mismo modificador de las clases base)
 CC_CONSTRUCTOR_ACCESS:
 
 	/** 
 	* Metodo sobreescrito que sera invocado para inicializar la instancia de la clase.
-	* @return True si se puede ha inicializado correctamente, false en caso contrario
+	* @return True si se ha inicializado correctamente, false en caso contrario
 	*/
 	virtual bool init() override;
 
@@ -43,12 +44,14 @@ protected:
 private:
 
 	/** Funcion para la creacion del menu principal */
-	void MainMenuLayer::createMenu();
+	void _createMenu();
 
 	/** Funcion callback para cerrar la aplicacion
 	* @param _sender objeto remitente de la funcion callback
 	*/
-    void menuCloseCallback(cocos2d::Ref* _sender);
+    void _menuCloseCallback(cocos2d::Ref* _sender);
+
+
 
 };
 

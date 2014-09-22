@@ -1,21 +1,18 @@
-#ifndef __MAIN_MENU_SCENE_H__
-#define __MAIN_MENU_SCENE_H__
+#ifndef __LAYER_BASE_H__
+#define __LAYER_BASE_H__
 
 #include "cocos2d.h"
 
 /** 
-*@brief Clase con la escena base para heredar por los ejemplos
+*@brief Clase con la capa base para heredar por los ejemplos
 */
-class SceneBase : public cocos2d::Scene
+class LayerBase : public cocos2d::Layer
 {
 
 public:
 
 	/** Destructor por defecto de la clase */
-	virtual ~SceneBase(void);
-
-	/** Metodo virtual para ejecutar la escena especifico que herede de esta escena */
-    virtual void executeSample() = 0;
+	virtual ~LayerBase(void);
 
 
 	// se hace uso de la macro de cocos2dx para definir el acceso de metodos heredados
@@ -30,8 +27,8 @@ CC_CONSTRUCTOR_ACCESS:
 
 protected:
 
-	/** Constructor por defecto de la clase (protegido para evitar que se creen instancias desde fuera de la clase, deben crearse mediante el metodo 'SceneBase::create()')*/
-	SceneBase(void);
+	/** Constructor por defecto de la clase (protegido para evitar que se creen instancias desde fuera de la clase, deben crearse mediante el metodo 'LayerBase::create()')*/
+	LayerBase(void);
 
 
 private:
@@ -39,9 +36,9 @@ private:
 	/** Funcion callback para volver al menu principal 
 	* @param _sender referencia al objeto remitente
 	*/
-    void mainMenuCallback(cocos2d::Ref* _sender);
+    void _mainMenuCallback(cocos2d::Ref* _sender);
 
 };
 
-#endif // __MAIN_MENU_SCENE_H__
+#endif // __LAYER_BASE_H__
 

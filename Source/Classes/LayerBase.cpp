@@ -1,15 +1,15 @@
-#include "SceneBase.h"
+#include "LayerBase.h"
 
 
 using namespace cocos2d;
 
 /** Constructor por defecto de la clase */
-SceneBase::SceneBase(void)
+LayerBase::LayerBase(void)
 {
 }
 
 /** Destructor por defecto de la clase */
-SceneBase::~SceneBase(void)
+LayerBase::~LayerBase(void)
 {
 }
 
@@ -17,10 +17,10 @@ SceneBase::~SceneBase(void)
 * Metodo sobreescrito que sera invocado para inicializar la instancia de la clase
 * @return True si se puede ha inicializado correctamente, false en caso contrario
 */
-bool SceneBase::init()
+bool LayerBase::init()
 {
 	// 1.- Inicializar el padre primero
-	if ( !Scene::init() ) return false;
+	if ( !Layer::init() ) return false;
 
 	// 2.- Inicializar clase
 
@@ -41,7 +41,7 @@ bool SceneBase::init()
 }	
 
 /** Funcion callback para volver al menu principal 	*/
-void SceneBase::mainMenuCallback(cocos2d::Ref* _sender)
+void LayerBase::_mainMenuCallback(cocos2d::Ref* _sender)
 {
 	//Scene* scene = Scene::create();
 

@@ -1,15 +1,17 @@
-#include "MainMenuScene.h"
+#include "SceneBase.h"
+
 
 using namespace cocos2d;
 
 /** Constructor por defecto de la clase */
-MainMenuScene::MainMenuScene(void)
-	: m_mainMenuLayer(nullptr)
+template<class Tlayer>
+SceneBase<Tlayer>::SceneBase(void)
 {
 }
 
 /** Destructor por defecto de la clase */
-MainMenuScene::~MainMenuScene(void)
+template<class Tlayer>
+SceneBase<Tlayer>::~SceneBase(void)
 {
 }
 
@@ -17,16 +19,15 @@ MainMenuScene::~MainMenuScene(void)
 * Metodo sobreescrito que sera invocado para inicializar la instancia de la clase
 * @return True si se puede ha inicializado correctamente, false en caso contrario
 */
-bool MainMenuScene::init()
+template<class Tlayer>
+bool SceneBase<Tlayer>::init()
 {
-	// Inicializar el padre
+	// 1.- Inicializar la escena padre
 	if ( !Scene::init() ) return false;
-
-	// Inicializar la capa con el menu principal
-	this->m_mainMenuLayer = MainMenuLayer::create();
-	this->addChild(this->m_mainMenuLayer);
+	
+	// 2.- inicializar capas
+	this->m_mainlayer == Tlayer::create();
 
 	// inicializacion correcta
 	return true;
 }	
-

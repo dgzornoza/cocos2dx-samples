@@ -2,6 +2,39 @@
 
 using namespace cocos2d;
 
+// Namespace anonimo para crear objetos SOLO en el ambito de este archivo cpp
+namespace
+{
+	/** Estructura para crear la lista de tests de la aplicaicon */
+	typedef struct st_testList
+	{
+		/** Nombre del test */
+		const char* name;
+		/** Puntero a la funcion con la escena del test a ejecutar */
+		std::function<Scene*()> callback;
+
+	} TestList;
+
+	/** Estructura para crear la lista de tests de la aplicacion */
+	TestList g_testList[] = {
+				
+		//
+		// TESTS ORDENADOS ALFABETICAMENTE
+		//
+		{ "Ejemplo Sprites", [](){ return BasicScene<MainMenuLayer>::create(); } },
+	};
+
+	/** Numero de elementos de la lista con los tests */
+	static int g_testListCount = sizeof(g_testList) / sizeof(g_testList[0]);
+
+	/** Enumeracion con los tags de los nodos a crear */
+	enum class enumNodeTags : int
+	{
+		/** Layout del GUI principal */
+		MAIN_LAYOUT = 1000
+	};
+}
+
 /** Constructor por defecto de la clase */
 MainMenuLayer::MainMenuLayer(void)
 {
@@ -19,63 +52,57 @@ MainMenuLayer::~MainMenuLayer(void)
 */
 bool MainMenuLayer::init()
 {
-	// Inicializar el padre
+	// Inicializar la clase base
 	if ( !Layer::init() ) return false;
 
 	// obtener dimensiones de diseño
 	Size size = Director::getInstance()->getWinSize();
 
 	// cachear los spriteframes del menu
-	//SpriteFrameCache::getInstance()->addSpriteFramesWithFile("gui.plist", "gui.png");
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("MainMenu.plist", "MainMenu.png");
+	    
+	// crear un layout principal para los controles UI
+	ui::Layout* layout = ui::Layout::create();
+	layout->setTag(static_cast<int>(enumNodeTags::MAIN_LAYOUT));
+	this->addChild(layout);
 
-	// crear menu
-	this->createMenu();
-
-
-
-
-	// cargar menu
-	//ui::Layout* m_mainLayout = dynamic_cast<ui::Layout*>(cocostudio::GUIReader::getInstance()->widgetFromJsonFile("MainMenuUI/MainMenuUI.json"));//
-	//if (m_mainLayout == nullptr) return false;
-	
-	//ui::Widget* widget = static_cast<ui::Widget*>(m_mainLayout->getChildByName("MenuList"));
-	//ui::Widget* widget2 = static_cast<ui::Widget*>(m_mainLayout->getChildByName("MenuListItem"));
-    //cocostudio::ComRender *render = static_cast<cocostudio::ComRender*>(mainMenuNode->getChildByTag(10025)->getComponent("GUIComponent"));
-	//ui::Widget* widget = static_cast<ui::Widget*>(render->getNode());	
-	//ui::Button* button = static_cast<ui::Button*>(widget->getChildByName("Button_156"));
-//	button->addTouchEventListener(this, toucheventselector(UIComponentTest::touchEvent));
-    //button->addTouchEventListener(CC_CALLBACK_2(MainMenuLayer::menuCloseCallback, this));
+	// crear el menu con los ejemplos
+	this->_createMenu();
 
 	// inicializacion correcta
 	return true;
 }	
 
 /** Funcion para la creacion del menu principal */
-void MainMenuLayer::createMenu()
-{
-	//ui::Layout* layout = ui::Layout::create();
-	//this->addChild(layout);
+void MainMenuLayer::_createMenu()
+{		
+	// obtener dimensiones de diseño
+	Size size = Director::getInstance()->getWinSize();
 
+	// obtener el layout principal del ui
+	ui::Layout* layout = static_cast<ui::Layout*>(this->getChildByTag(static_cast<int>(enumNodeTags::MAIN_LAYOUT)));
+	
+	// crear el list view
 	ui::ListView* lv = ui::ListView::create();
-    ui::Button* item = ui::Button::create();	
-	item->loadTextures("close_normal.png", "close_normal.png", "", ui::Widget::TextureResType::LOCAL);
-    lv->setItemModel(item);
-
-    for (int i=0; i<20; i++)
-    {
-        lv->pushBackDefaultItem();
-    }
     lv->setItemsMargin(10);
 	lv->setGravity(ui::ListView::Gravity::CENTER_HORIZONTAL);
-    lv->setSize(Size(100, 100));
-	//lv->setBackGroundColorType(ui::Layout::BackGroundColorType::SOLID);
-    //lv->setBackGroundColor(Color3B::GREEN);
-    lv->setPosition(Point(100, 100));
-	this->addChild(lv);
+	lv->setSize(Size(size.width, 250.0f));	
+	
+	// añadir todos los tests al list view
+	for (int i = 0; i < g_testListCount; ++i)
+    {
+		ui::Text* text = ui::Text::create(g_testList[i].name, "fonts/American Typewriter.ttf", 25);
+		text->setColor(Color3B(159, 168, 176));
+		text->setTouchEnabled(true);		
+		lv->pushBackCustomItem(text);
+    }
+
+	// añadir el listview al layout
+    layout->addChild(lv);
 }
 
 /** Funcion callback para cerrar la aplicacion */
-void MainMenuLayer::menuCloseCallback(Ref* _sender)
+void MainMenuLayer::_menuCloseCallback(Ref* _sender)
 {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
 	MessageBox("You pressed the close button. Windows Store Apps do not implement a close button.","Alert");

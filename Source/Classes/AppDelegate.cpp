@@ -20,11 +20,12 @@ bool AppDelegate::applicationDidFinishLaunching()
     auto glview = director->getOpenGLView();
     if(!glview) {
         glview = GLView::create("SamplesGLView"); // 3:2
-		//glview = GLView::createWithRect("SamplesGLView", Rect(0,0, 1280, 1024));  // 5:4
+		//glview = GLView::createWithRect("SamplesGLView", Rect(0,0, 1280, 1024)); // 5:4
 		//glview = GLView::createWithRect("SamplesGLView", Rect(0,0, 1280, 720)); // 16:9
 		//glview = GLView::createWithRect("SamplesGLView", Rect(0,0, 1067, 600)); // 16:9
 
 		//glview = GLView::createWithRect("SamplesGLView", Rect(0,0, 960, 640)); // 3:2
+		//glview = GLView::createWithRect("SamplesGLView", Rect(0,0, 480, 320)); // 3:2
 		//glview = GLView::createWithRect("SamplesGLView", Rect(0,0, 1024, 768)); // 4:3
 		//glview = GLView::createWithRect("SamplesGLView", Rect(0,0, 1280, 768)); // 5:3
 		//glview = GLView::createWithRect("SamplesGLView", Rect(0,0, 1280, 720)); // 16:9

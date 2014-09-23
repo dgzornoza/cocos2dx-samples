@@ -26,13 +26,6 @@ namespace
 
 	/** Numero de elementos de la lista con los tests */
 	static int g_testListCount = sizeof(g_testList) / sizeof(g_testList[0]);
-
-	/** Enumeracion con los tags de los nodos a crear */
-	enum class enumNodeTags : int
-	{
-		/** Layout del GUI principal */
-		MAIN_LAYOUT = 1000
-	};
 }
 
 /** Constructor por defecto de la clase */
@@ -56,46 +49,35 @@ bool MainMenuLayer::init()
 	if ( !Layer::init() ) return false;
 
 	// obtener dimensiones de diseño
-	Size size = Director::getInstance()->getWinSize();
+	Size screenSize = Director::getInstance()->getWinSize();
 
 	// cachear los spriteframes del menu
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("MainMenu.plist", "MainMenu.png");
 	    
 	// crear un layout principal para los controles UI
 	ui::Layout* layout = ui::Layout::create();
-	layout->setTag(static_cast<int>(enumNodeTags::MAIN_LAYOUT));
+	layout->setSize(screenSize);
 	this->addChild(layout);
 
 	// crear el menu con los ejemplos
-	this->_createMenu();
+	this->_createMenu(layout);
+	// crear el boton para cerrar la aplicacion
+	this->_createCloseButton(layout);
 
-	// Crear el boton para cerrar la aplicacion
-    ui::Button* button = ui::Button::create("cocosui/animationbuttonnormal.png",
-		"cocosui/animationbuttonpressed.png", "", ui::Widget::TextureResType::PLIST);
-    button->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f));
-//        button->addTouchEventListener(this, toucheventselector(UIButtonTest::touchEvent));
-    button->addTouchEventListener(CC_CALLBACK_2(UIButtonTest::touchEvent, this));
-    _uiLayer->addChild(button);
 
 	// inicializacion correcta
 	return true;
 }	
 
 /** Funcion para la creacion del menu principal */
-void MainMenuLayer::_createMenu()
-{		
-	// obtener dimensiones de diseño
-	Size size = Director::getInstance()->getWinSize();
-
-	// obtener el layout principal del ui
-	ui::Layout* layout = static_cast<ui::Layout*>(this->getChildByTag(static_cast<int>(enumNodeTags::MAIN_LAYOUT)));
-	
+void MainMenuLayer::_createMenu(ui::Layout* _layout)
+{
 	// crear el list view
 	ui::ListView* lv = ui::ListView::create();
     lv->setItemsMargin(10);
 	lv->setGravity(ui::ListView::Gravity::CENTER_HORIZONTAL);
-	lv->setSize(Size(size.width, 250.0f));	
-	
+	lv->setSize(Size(Director::getInstance()->getWinSize().width, 250.0f));	
+
 	// añadir todos los tests al list view
 	for (int i = 0; i < g_testListCount; ++i)
     {
@@ -104,22 +86,66 @@ void MainMenuLayer::_createMenu()
 		text->setTouchEnabled(true);		
 		lv->pushBackCustomItem(text);
     }
+	
+	// eventos de seleccion de items
+	//lv->addEventListener((ui::ListView::ccListViewCallback)CC_CALLBACK_2(UIListViewTest_Vertical::selectedItemEvent, this));
+	lv->addEventListener((ui::ListView::ccListViewCallback)[](Ref* _sender, ui::ListView::EventType _type)		
+	{
+		// evaluar el tipo de evento generado
+		switch (_type)
+		{
+
+		case cocos2d::ui::ListView::EventType::ON_SELECTED_ITEM_END:
+				
+			// eliminar todos los datos de la cache de esta capa
+			Director::getInstance()->purgeCachedData();
+
+			// crear la escena con el ejemplo seleccionado por el indice del listview
+			Scene* scene = g_testList[static_cast<ui::ListView*>(_sender)->getCurSelectedIndex()].callback();
+
+			// cambiar a la escena del ejemplo
+			Director::getInstance()->replaceScene(scene);
+
+			break;
+		}
+	});
+
 
 	// añadir el listview al layout
-    layout->addChild(lv);
+    _layout->addChild(lv);
 }
 
-/** Funcion callback para cerrar la aplicacion */
-void MainMenuLayer::_menuCloseCallback(Ref* _sender)
+/** Funcion para crear el boton para cerrar la aplicacion */
+void MainMenuLayer::_createCloseButton(ui::Layout* _layout)
 {
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
-	MessageBox("You pressed the close button. Windows Store Apps do not implement a close button.","Alert");
-    return;
-#endif
+	// Crear el boton para cerrar la aplicacion
+    ui::Button* closeBtn = ui::Button::create("close_normal.png",	"close_selected.png", "", ui::Widget::TextureResType::PLIST);
+	closeBtn->setPosition(Director::getInstance()->getWinSize() - closeBtn->getSize());
 
-    Director::getInstance()->end();
+	// eventos
+	closeBtn->addTouchEventListener([](Ref* _sender, ui::Widget::TouchEventType _evtType)
+	{			
+		// evaluar el tipo de evento generado
+		switch (_evtType)
+		{
+
+		case ui::Widget::TouchEventType::ENDED :
+
+				// Finalizar la aplicacion
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
+				MessageBox("You pressed the close button. Windows Store Apps do not implement a close button.","Alert");
+				return;
+#endif
+				Director::getInstance()->end();
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    exit(0);
+				exit(0);
 #endif
+				break;
+
+		}
+	});
+
+    _layout->addChild(closeBtn);
 }
+

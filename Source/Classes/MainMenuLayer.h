@@ -43,14 +43,15 @@ protected:
 
 private:
 
-	/** Funcion para la creacion del menu principal */
-	void _createMenu();
-
-	/** Funcion callback para cerrar la aplicacion
-	* @param _sender objeto remitente de la funcion callback
+	/** Funcion para la creacion del menu principal
+	* @param _layout capa donde sera insertado el menu
 	*/
-    void _menuCloseCallback(cocos2d::Ref* _sender);
+	void _createMenu(cocos2d::ui::Layout* layout);
 
+	/** Funcion para crear el boton para cerrar la aplicacion
+	* @param _layout capa donde sera insertado el boton
+	*/
+	void _createCloseButton(cocos2d::ui::Layout* layout);
 
 
 };

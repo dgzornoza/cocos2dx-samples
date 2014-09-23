@@ -69,6 +69,14 @@ bool MainMenuLayer::init()
 	// crear el menu con los ejemplos
 	this->_createMenu();
 
+	// Crear el boton para cerrar la aplicacion
+    ui::Button* button = ui::Button::create("cocosui/animationbuttonnormal.png",
+		"cocosui/animationbuttonpressed.png", "", ui::Widget::TextureResType::PLIST);
+    button->setPosition(Vec2(widgetSize.width / 2.0f, widgetSize.height / 2.0f));
+//        button->addTouchEventListener(this, toucheventselector(UIButtonTest::touchEvent));
+    button->addTouchEventListener(CC_CALLBACK_2(UIButtonTest::touchEvent, this));
+    _uiLayer->addChild(button);
+
 	// inicializacion correcta
 	return true;
 }	

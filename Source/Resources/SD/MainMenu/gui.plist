@@ -7,54 +7,54 @@
             <key>close_normal.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{64,130},{60,63}}</string>
+                <string>{{2,35},{30,31}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{60,63}}</string>
+                <string>{{0,0},{30,31}}</string>
                 <key>sourceSize</key>
-                <string>{60,63}</string>
+                <string>{30,31}</string>
             </dict>
             <key>close_selected.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,130},{60,63}}</string>
+                <string>{{82,2},{30,31}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{60,63}}</string>
+                <string>{{0,0},{30,31}}</string>
                 <key>sourceSize</key>
-                <string>{60,63}</string>
+                <string>{30,31}</string>
             </dict>
             <key>direction_normal.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,66},{75,62}}</string>
+                <string>{{42,2},{38,31}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{75,62}}</string>
+                <string>{{0,0},{38,31}}</string>
                 <key>sourceSize</key>
-                <string>{75,62}</string>
+                <string>{38,31}</string>
             </dict>
             <key>direction_selected.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{75,62}}</string>
+                <string>{{2,2},{38,31}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{75,62}}</string>
+                <string>{{0,0},{38,31}}</string>
                 <key>sourceSize</key>
-                <string>{75,62}</string>
+                <string>{38,31}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -64,9 +64,9 @@
             <key>realTextureFileName</key>
             <string>sprites.png</string>
             <key>size</key>
-            <string>{128,256}</string>
+            <string>{128,128}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:5509a81057a4acbbff90cf217defa07a$</string>
+            <string>$TexturePacker:SmartUpdate:00eec02ce12a4b425d5709931b12d7ff$</string>
             <key>textureFileName</key>
             <string>sprites.png</string>
         </dict>

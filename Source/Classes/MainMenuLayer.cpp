@@ -21,7 +21,7 @@ namespace
 		//
 		// TESTS ORDENADOS ALFABETICAMENTE
 		//
-		{ "Ejemplo Sprites", [](){ return BasicScene<MainMenuLayer>::create(); } },
+		{ "Ejemplo Sprites", [](){ return BasicScene<SpritesSampleLayer>::create(); } },
 	};
 
 	/** Numero de elementos de la lista con los tests */

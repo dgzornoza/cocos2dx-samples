@@ -52,7 +52,7 @@ bool MainMenuLayer::init()
 	Size screenSize = Director::getInstance()->getWinSize();
 
 	// cachear los spriteframes del menu
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("MainMenu.plist", "MainMenu.png");
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("gui.plist", "gui.png");
 	    
 	// crear un layout principal para los controles UI
 	ui::Layout* layout = ui::Layout::create();
@@ -81,7 +81,7 @@ void MainMenuLayer::_createMenu(ui::Layout* _layout)
 	// añadir todos los tests al list view
 	for (int i = 0; i < g_testListCount; ++i)
     {
-		ui::Text* text = ui::Text::create(g_testList[i].name, "fonts/American Typewriter.ttf", 25);
+		ui::Text* text = ui::Text::create(g_testList[i].name, "fonts/CarterOne.ttf", 25);
 		text->setColor(Color3B(159, 168, 176));
 		text->setTouchEnabled(true);		
 		lv->pushBackCustomItem(text);
@@ -119,7 +119,7 @@ void MainMenuLayer::_createMenu(ui::Layout* _layout)
 void MainMenuLayer::_createCloseButton(ui::Layout* _layout)
 {
 	// Crear el boton para cerrar la aplicacion
-    ui::Button* closeBtn = ui::Button::create("close_normal.png",	"close_selected.png", "", ui::Widget::TextureResType::PLIST);
+    ui::Button* closeBtn = ui::Button::create("boton.png",	"boton.png", "", ui::Widget::TextureResType::PLIST);
 	closeBtn->setPosition(Director::getInstance()->getWinSize() - closeBtn->getSize());
 
 	// eventos

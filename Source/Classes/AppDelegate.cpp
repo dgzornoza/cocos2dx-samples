@@ -54,17 +54,17 @@ bool AppDelegate::applicationDidFinishLaunching()
 	if (screenSize.width > 960)
     {
 		resourceSize = Size(1920, 1280);
-        searchPaths.push_back("MainMenu/HDR");
+        searchPaths.push_back("HDR");
     }
 	else if (screenSize.width > 480)
     {
         resourceSize = Size(960, 640);
-        searchPaths.push_back("MainMenu/HD");
+        searchPaths.push_back("HD");
     }
 	else
 	{
 		resourceSize = Size(480, 320);
-		searchPaths.push_back("MainMenu/SD");
+		searchPaths.push_back("SD");
 	}
 
 	// establecer el factor de escala basado en el tamaño de los recursos y las dimensiones de diseño

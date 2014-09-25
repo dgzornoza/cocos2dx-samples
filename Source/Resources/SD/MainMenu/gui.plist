@@ -4,57 +4,109 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>close_normal.png</key>
+            <key>arrow_left_normal.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,35},{30,31}}</string>
+                <string>{{62,27},{58,21}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{30,31}}</string>
+                <string>{{3,3},{58,21}}</string>
                 <key>sourceSize</key>
-                <string>{30,31}</string>
+                <string>{64,27}</string>
             </dict>
-            <key>close_selected.png</key>
+            <key>arrow_left_selected.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{82,2},{30,31}}</string>
+                <string>{{64,2},{60,23}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{30,31}}</string>
+                <string>{{2,2},{60,23}}</string>
                 <key>sourceSize</key>
-                <string>{30,31}</string>
+                <string>{64,27}</string>
             </dict>
-            <key>direction_normal.png</key>
+            <key>arrow_right_normal.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{42,2},{38,31}}</string>
+                <string>{{2,103},{58,21}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{38,31}}</string>
+                <string>{{3,3},{58,21}}</string>
                 <key>sourceSize</key>
-                <string>{38,31}</string>
+                <string>{64,27}</string>
             </dict>
-            <key>direction_selected.png</key>
+            <key>arrow_right_selected.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{38,31}}</string>
+                <string>{{2,2},{60,23}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{38,31}}</string>
+                <string>{{2,2},{60,23}}</string>
                 <key>sourceSize</key>
-                <string>{38,31}</string>
+                <string>{64,27}</string>
+            </dict>
+            <key>btn_close_normal.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{62,88},{34,36}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1,0},{34,36}}</string>
+                <key>sourceSize</key>
+                <string>{36,36}</string>
+            </dict>
+            <key>btn_close_selected.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,65},{36,36}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{36,36}}</string>
+                <key>sourceSize</key>
+                <string>{36,36}</string>
+            </dict>
+            <key>btn_reload_normal.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{40,50},{34,36}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1,0},{34,36}}</string>
+                <key>sourceSize</key>
+                <string>{36,36}</string>
+            </dict>
+            <key>btn_reload_selected.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,27},{36,36}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{36,36}}</string>
+                <key>sourceSize</key>
+                <string>{36,36}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -62,13 +114,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>sprites.png</string>
+            <string>gui.png</string>
             <key>size</key>
             <string>{128,128}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:00eec02ce12a4b425d5709931b12d7ff$</string>
+            <string>$TexturePacker:SmartUpdate:04f22db88ff85ca1a49c708e53864fe9$</string>
             <key>textureFileName</key>
-            <string>sprites.png</string>
+            <string>gui.png</string>
         </dict>
     </dict>
 </plist>

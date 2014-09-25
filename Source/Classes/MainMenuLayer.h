@@ -53,7 +53,6 @@ private:
 	*/
 	void _createCloseButton(cocos2d::ui::Layout* layout);
 
-
 };
 
 #endif // __MAIN_MENU_LAYER_H__

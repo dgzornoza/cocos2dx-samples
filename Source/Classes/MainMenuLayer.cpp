@@ -52,7 +52,7 @@ bool MainMenuLayer::init()
 	Size screenSize = Director::getInstance()->getWinSize();
 
 	// cachear los spriteframes del menu
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("gui.plist", "gui.png");
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("MainMenu/gui.plist", "MainMenu/gui.png");
 	    
 	// crear un layout principal para los controles UI
 	ui::Layout* layout = ui::Layout::create();
@@ -81,14 +81,13 @@ void MainMenuLayer::_createMenu(ui::Layout* _layout)
 	// añadir todos los tests al list view
 	for (int i = 0; i < g_testListCount; ++i)
     {
-		ui::Text* text = ui::Text::create(g_testList[i].name, "fonts/CarterOne.ttf", 25);
+		ui::Text* text = ui::Text::create(g_testList[i].name, "fonts/AveriaSansLibre-Bold.ttf", 30);
 		text->setColor(Color3B(159, 168, 176));
-		text->setTouchEnabled(true);		
+		text->setTouchEnabled(true);
 		lv->pushBackCustomItem(text);
     }
 	
 	// eventos de seleccion de items
-	//lv->addEventListener((ui::ListView::ccListViewCallback)CC_CALLBACK_2(UIListViewTest_Vertical::selectedItemEvent, this));
 	lv->addEventListener((ui::ListView::ccListViewCallback)[](Ref* _sender, ui::ListView::EventType _type)		
 	{
 		// evaluar el tipo de evento generado
@@ -96,15 +95,30 @@ void MainMenuLayer::_createMenu(ui::Layout* _layout)
 		{
 
 		case cocos2d::ui::ListView::EventType::ON_SELECTED_ITEM_END:
-				
-			// eliminar todos los datos de la cache de esta capa
-			Director::getInstance()->purgeCachedData();
 
-			// crear la escena con el ejemplo seleccionado por el indice del listview
-			Scene* scene = g_testList[static_cast<ui::ListView*>(_sender)->getCurSelectedIndex()].callback();
+			// obtener el listview
+			ui::ListView* lv = static_cast<ui::ListView*>(_sender);
+			// obtener el indice del elemento seleccionado y el item seleccionado
+			ssize_t selectedIndex = lv->getCurSelectedIndex();
+			ui::Widget* selectedItem = lv->getItem(selectedIndex);
 
-			// cambiar a la escena del ejemplo
-			Director::getInstance()->replaceScene(scene);
+			// crear acciones para dar efecto al item seleccionado y cambiar a la escena con el ejemplo cuando finalicen
+			selectedItem->runAction(TintTo::create(1.0f, 0x0, 0xFF, 0x0));
+			selectedItem->runAction(Sequence::create(DelayTime::create(.3f), ScaleTo::create(.7f, 1.0f, .0f), nullptr));
+			selectedItem->runAction(Sequence::create(				
+				Sequence::create(MoveBy::create(.3f, Vec2(-20.0f, .0f)), MoveBy::create(.7f, Vec2(500.0f, .0f)), nullptr),
+				CallFunc::create([selectedIndex]()
+				{
+					// eliminar todos los datos de la cache de esta capa
+					Director::getInstance()->purgeCachedData();
+
+					// crear la escena con el ejemplo seleccionado por el indice del listview
+					Scene* scene = g_testList[selectedIndex].callback();
+
+					// cambiar a la escena del ejemplo
+					Director::getInstance()->replaceScene(scene);
+				}),
+				nullptr));
 
 			break;
 		}
@@ -119,7 +133,7 @@ void MainMenuLayer::_createMenu(ui::Layout* _layout)
 void MainMenuLayer::_createCloseButton(ui::Layout* _layout)
 {
 	// Crear el boton para cerrar la aplicacion
-    ui::Button* closeBtn = ui::Button::create("boton.png",	"boton.png", "", ui::Widget::TextureResType::PLIST);
+    ui::Button* closeBtn = ui::Button::create("btn_close_normal.png",	"btn_close_selected.png", "", ui::Widget::TextureResType::PLIST);
 	closeBtn->setPosition(Director::getInstance()->getWinSize() - closeBtn->getSize());
 
 	// eventos
@@ -148,4 +162,3 @@ void MainMenuLayer::_createCloseButton(ui::Layout* _layout)
 
     _layout->addChild(closeBtn);
 }
-

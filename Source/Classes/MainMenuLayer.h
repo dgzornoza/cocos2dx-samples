@@ -3,7 +3,6 @@
 
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
-#include "cocostudio\CocoStudio.h"
 
 #include "Headers.h"
 

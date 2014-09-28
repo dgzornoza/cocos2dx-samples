@@ -11,7 +11,10 @@
       <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
     </Filter>
     <Filter Include="Classes\Sprites">
-      <UniqueIdentifier>{bc3f9029-7d10-4b69-92ee-62a6650271fa}</UniqueIdentifier>
+      <UniqueIdentifier>{624accf9-c839-486c-a7bd-50f8d5f1181f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Plugins">
+      <UniqueIdentifier>{411d509e-3b66-4f34-bb8d-1562858b89da}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -24,14 +27,17 @@
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\LayerBase.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
     <ClCompile Include="..\Classes\MainMenuLayer.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Sprites\SpritesSampleLayer.cpp">
       <Filter>Classes\Sprites</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\LayerBase.cpp">
-      <Filter>Classes</Filter>
+    <ClCompile Include="..\Classes\Plugins\PluginsSampleLayer.cpp">
+      <Filter>Classes\Plugins</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -44,20 +50,23 @@
     <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>Classes</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\BasicScene.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Headers.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LayerBase.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
     <ClInclude Include="..\Classes\MainMenuLayer.h">
       <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Sprites\SpritesSampleLayer.h">
       <Filter>Classes\Sprites</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\LayerBase.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\BasicScene.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Headers.h">
-      <Filter>Classes</Filter>
+    <ClInclude Include="..\Classes\Plugins\PluginsSampleLayer.h">
+      <Filter>Classes\Plugins</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

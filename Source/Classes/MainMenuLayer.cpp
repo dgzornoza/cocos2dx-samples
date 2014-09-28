@@ -22,6 +22,7 @@ namespace
 		// TESTS ORDENADOS ALFABETICAMENTE
 		//
 		{ "Ejemplo Sprites", [](){ return BasicScene<SpritesSampleLayer>::create(); } },
+		{ "Ejemplo Interop", [](){ return BasicScene<PluginsSampleLayer>::create(); } },
 	};
 
 	/** Numero de elementos de la lista con los tests */

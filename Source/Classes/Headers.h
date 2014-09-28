@@ -9,7 +9,9 @@
 #include "LayerBase.h"
 #include "MainMenuLayer.h"
 
+#include "Plugins/PluginsSampleLayer.h"
 #include "Sprites/SpritesSampleLayer.h"
+
 
 
 

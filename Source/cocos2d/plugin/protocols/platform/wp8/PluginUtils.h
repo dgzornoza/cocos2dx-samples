@@ -25,7 +25,7 @@ THE SOFTWARE.
 #ifndef __PLUGIN_UTILS_H__
 #define __PLUGIN_UTILS_H__
 
-#include "PluginProtocol.h"
+#include "plugin\protocols\include\PluginProtocol.h"
 #include <string>
 #include <map>
 #include "PluginParam.h"

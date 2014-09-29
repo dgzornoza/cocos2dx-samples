@@ -22,7 +22,10 @@ namespace
 		// TESTS ORDENADOS ALFABETICAMENTE
 		//
 		{ "Ejemplo Sprites", [](){ return BasicScene<SpritesSampleLayer>::create(); } },
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT || CC_TARGET_PLATFORM == CC_PLATFORM_WP8 || CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_PLATFORM_WP8 == CC_PLATFORM_IOS )
 		{ "Ejemplo Interop", [](){ return BasicScene<PluginsSampleLayer>::create(); } },
+#endif
+
 	};
 
 	/** Numero de elementos de la lista con los tests */

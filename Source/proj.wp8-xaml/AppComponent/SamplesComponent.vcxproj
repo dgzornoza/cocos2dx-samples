@@ -90,7 +90,7 @@
       <CompileAsWinRT>true</CompileAsWinRT>
       <ForcedIncludeFiles>pch.h</ForcedIncludeFiles>
       <AdditionalOptions>/Zm200 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Classes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(EngineRoot)cocos\plugin\protocols\include;$(ProjectDir)..\..\Classes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -203,6 +203,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Plugins\PluginFactory.cpp" />
+    <ClCompile Include="..\..\..\Plugins\PluginManager.cpp" />
+    <ClCompile Include="..\..\..\Plugins\PluginParam.cpp" />
     <ClCompile Include="..\..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\..\Classes\LayerBase.cpp" />
@@ -222,6 +225,10 @@
     <ClCompile Include="src\EditBoxEvent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Plugins\PluginFactory.h" />
+    <ClInclude Include="..\..\..\Plugins\PluginManager.h" />
+    <ClInclude Include="..\..\..\Plugins\PluginParam.h" />
+    <ClInclude Include="..\..\..\Plugins\IPlugin.h" />
     <ClInclude Include="..\..\Classes\AppDelegate.h" />
     <ClInclude Include="..\..\Classes\BasicScene.h" />
     <ClInclude Include="..\..\Classes\Headers.h" />

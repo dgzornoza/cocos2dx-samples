@@ -35,6 +35,15 @@
     <ClCompile Include="..\..\Classes\Sprites\SpritesSampleLayer.cpp">
       <Filter>Classes\Sprites</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Plugins\PluginManager.cpp">
+      <Filter>Plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Plugins\PluginParam.cpp">
+      <Filter>Plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Plugins\PluginFactory.cpp">
+      <Filter>Plugins</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -80,6 +89,18 @@
     <ClInclude Include="..\..\Classes\Sprites\SpritesSampleLayer.h">
       <Filter>Classes\Sprites</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Plugins\PluginFactory.h">
+      <Filter>Plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Plugins\PluginManager.h">
+      <Filter>Plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Plugins\PluginParam.h">
+      <Filter>Plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Plugins\IPlugin.h">
+      <Filter>Plugins</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Classes">
@@ -93,6 +114,12 @@
     </Filter>
     <Filter Include="Classes\Sprites">
       <UniqueIdentifier>{e0ee6b57-1ac4-4f4b-8c9e-80a967e2eef1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins">
+      <UniqueIdentifier>{96f68a74-5356-4b90-8e60-c00874b79d4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\wp8">
+      <UniqueIdentifier>{72142787-621b-4e99-bff1-adce854abd15}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

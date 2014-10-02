@@ -1,5 +1,4 @@
 ﻿#include "PluginManager.h"
-#include "PluginFactory.h"
 
 namespace cocos2d { namespace zplugin {
 
@@ -39,44 +38,24 @@ PluginManager* PluginManager::getInstance()
     return s_pluginManager;
 }
 
-/** load the plugin by name */
-IPlugin* loadPlugin(const char* _pluginName)
-{
-    IPlugin* plugin = nullptr;
-    do {
-		if (_pluginName == nullptr || strlen(_pluginName) == 0) break;
-        std::map<const char*, IPlugin*>::iterator it = m_pluginsMap.find(_pluginName);
-        if (it != m_pluginsMap.end())
-        {
-            if (it->second == NULL) {
-                it->second = PluginFactory::getInstance()->createPlugin(m_pluginsMap);
-            }
-            plugin = it->second;
-        } else
-        {
-        	plugin = PluginFactory::getInstance()->createPlugin(m_pluginsMap);
-        	m_pluginsMap[_pluginName] = plugin;
-        }
-    } while (false);
-
-    return plugin;
-}
-
-
 /** unload the plugin by name */
-void unloadPlugin(const char* _pluginName)
+void PluginManager::unloadPlugin(const char* _pluginName)
 {
-    do {
-        if (_pluginName == NULL || strlen(_pluginName) == 0) break;
-        std::map<std::string, PluginProtocol*>::iterator it = m_pluginsMap.find(_pluginName);
-		if (it != m_pluginsMap.end())
-        {
-            if (it->second != nullptr) {
-                delete it->second;
-                it->second = nullptr;
-            }
+	// verify plugin name
+	assert(_pluginName == nullptr || strlen(_pluginName) == 0, "Plugin name is required");
+
+	// find plugin name in plugins map
+    std::map<const char*, IPlugin*>::iterator it = m_pluginsMap.find(_pluginName);
+	// if found, delete
+	if (it != m_pluginsMap.end())
+    {
+        if (it->second != nullptr) 
+		{
+            delete it->second;
+            it->second = nullptr;
         }
-    } while (false);
+		m_pluginsMap.erase(it);
+    }
 }
 
 }} //namespace cocos2d { namespace zplugin {

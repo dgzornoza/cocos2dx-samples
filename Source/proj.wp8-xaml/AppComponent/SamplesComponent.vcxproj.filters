@@ -38,12 +38,6 @@
     <ClCompile Include="..\..\..\Plugins\PluginManager.cpp">
       <Filter>Plugins</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Plugins\PluginParam.cpp">
-      <Filter>Plugins</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Plugins\PluginFactory.cpp">
-      <Filter>Plugins</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -89,13 +83,7 @@
     <ClInclude Include="..\..\Classes\Sprites\SpritesSampleLayer.h">
       <Filter>Classes\Sprites</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Plugins\PluginFactory.h">
-      <Filter>Plugins</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Plugins\PluginManager.h">
-      <Filter>Plugins</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Plugins\PluginParam.h">
       <Filter>Plugins</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Plugins\IPlugin.h">

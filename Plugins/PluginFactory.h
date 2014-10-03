@@ -28,23 +28,26 @@ public:
 	 * @param _pluginName unique name for plugin identity
 	 * @return plugin loaded
 	 */
-	template<class TPlugin, typename std::enable_if<std::is_base_of<IPlugin, TPlugin>::value>::type*>
+	template<class TPlugin>
 	TPlugin* loadPlugin(const char* _pluginName)
 	{
+		// verify IPlugin inheritance
+		static_assert(std::is_base_of<IPlugin, TPlugin>::value, "TPlugin don´t inherit from IPlugin"); 
+
 		// verify plugin name
 		CCASSERT(_pluginName == nullptr || strlen(_pluginName) == 0, "Plugin name is required");
 
 		// result
 		TPlugin* plugin = nullptr;
 
-		// find plugin name in plugins map		
+		// find plugin name in plugins map
 		std::map<const char*, IPlugin*>::iterator it = m_pluginsMap.find(_pluginName);
 		// found
 		if (it != m_pluginsMap.end())
 		{
 			// verify plugin pointer, create if not found and insert in plugins map
 			if (it->second == nullptr) it->second = new TPlugin();
-			CCASSERT(plugin = dynamic_cast<TPlugin>(it->second), "Already plugin loaded with other type.");			
+			CCASSERT(plugin = (TPlugin*)it->second, "Already plugin loaded with other type.");			
 		}
 		// not found. create plugin and insert in plugin map
 		else

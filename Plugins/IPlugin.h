@@ -11,8 +11,11 @@ class IPlugin
 
 public:
 
+	/** Default constructor */
+    IPlugin() {}
+
 	/** Default destructor */
-    virtual ~IPlugin(void);
+	virtual ~IPlugin(void) {}
 
 	/** Get plug-in name 
 	 * @return plugin name
@@ -21,7 +24,7 @@ public:
 	/** Get plug-in version 
 	 * @return plugin version
 	 */
-    virtual const char* getPluginVersion() const;
+	virtual const char* getPluginVersion() const = 0;
 
     /**
      * Async method for invoke platform code
@@ -37,13 +40,9 @@ public:
 	 * @return return value from platform code
      */
     std::string exec(const char* funcName, std::string _params);
-
-protected:
-
-	/** Default constructor */
-    IPlugin() {}
-
+	
 };
+
 
 }} //namespace cocos2d { namespace zplugin {
 

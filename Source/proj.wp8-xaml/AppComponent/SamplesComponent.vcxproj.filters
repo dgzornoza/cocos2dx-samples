@@ -35,7 +35,7 @@
     <ClCompile Include="..\..\Classes\Sprites\SpritesSampleLayer.cpp">
       <Filter>Classes\Sprites</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Plugins\PluginManager.cpp">
+    <ClCompile Include="..\..\..\Plugins\PluginFactory.cpp">
       <Filter>Plugins</Filter>
     </ClCompile>
   </ItemGroup>
@@ -83,10 +83,10 @@
     <ClInclude Include="..\..\Classes\Sprites\SpritesSampleLayer.h">
       <Filter>Classes\Sprites</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Plugins\PluginManager.h">
+    <ClInclude Include="..\..\..\Plugins\IPlugin.h">
       <Filter>Plugins</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Plugins\IPlugin.h">
+    <ClInclude Include="..\..\..\Plugins\PluginFactory.h">
       <Filter>Plugins</Filter>
     </ClInclude>
   </ItemGroup>

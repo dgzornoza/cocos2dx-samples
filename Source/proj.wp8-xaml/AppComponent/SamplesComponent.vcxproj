@@ -203,7 +203,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Plugins\PluginManager.cpp" />
+    <ClCompile Include="..\..\..\Plugins\PluginFactory.cpp" />
     <ClCompile Include="..\..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\..\Classes\LayerBase.cpp" />
@@ -223,7 +223,7 @@
     <ClCompile Include="src\EditBoxEvent.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Plugins\PluginManager.h" />
+    <ClInclude Include="..\..\..\Plugins\PluginFactory.h" />
     <ClInclude Include="..\..\..\Plugins\IPlugin.h" />
     <ClInclude Include="..\..\Classes\AppDelegate.h" />
     <ClInclude Include="..\..\Classes\BasicScene.h" />

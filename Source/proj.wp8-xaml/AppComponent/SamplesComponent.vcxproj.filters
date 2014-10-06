@@ -38,6 +38,9 @@
     <ClCompile Include="..\..\..\Plugins\PluginFactory.cpp">
       <Filter>Plugins</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Plugins\platforms\wp8\Wrapper.cpp">
+      <Filter>Plugins\wp8</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -88,6 +91,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Plugins\PluginFactory.h">
       <Filter>Plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Plugins\platforms\wp8\Wrapper.h">
+      <Filter>Plugins\wp8</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

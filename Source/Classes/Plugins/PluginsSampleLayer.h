@@ -10,6 +10,7 @@
 * http://www.cocos2d-x.org/wiki/How_to_integrate_third_SDK
 * http://stackoverflow.com/questions/17304386/how-does-one-make-function-calls-or-trigger-events-from-a-native-component-into
 * http://discuss.cocos2d-x.org/t/share-iap-for-windows-phone-8/12701/10
+* http://discuss.cocos2d-x.org/t/wp8-c-call-c-function-with-param/11302/2
 */
 class PluginsSampleLayer : public LayerBase
 {

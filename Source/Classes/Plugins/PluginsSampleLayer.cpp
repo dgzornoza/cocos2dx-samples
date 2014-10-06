@@ -1,6 +1,5 @@
 #include "PluginsSampleLayer.h"
-#include "PluginFactory.h"
-#include "IPlugin.h"
+
 
 using namespace cocos2d;
 

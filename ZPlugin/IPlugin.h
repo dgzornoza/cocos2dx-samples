@@ -26,20 +26,19 @@ public:
 	 */
 	virtual const char* getPluginVersion() const = 0;
 
-    /**
-     * Async method for invoke platform code
-	 * @param _funcName function name to execute
-	 * @param _params function parameters
-     */
-    void execAsync(const char* _funcName, std::string _params);
+protected:
 
 	/**
-     * Method for invoke platform code
+     * Method for invoke platform native code
+	 * @param _className class namespace and name
 	 * @param _funcName function name to execute
 	 * @param _params function parameters
 	 * @return return value from platform code
      */
-    std::string exec(const char* funcName, std::string _params);
+    void exec(const char* _className, const char* _funcName, std::string _params)
+	{
+
+	};
 	
 };
 

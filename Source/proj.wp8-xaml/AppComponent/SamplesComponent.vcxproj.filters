@@ -38,8 +38,8 @@
     <ClCompile Include="..\..\..\ZPlugin\PluginFactory.cpp">
       <Filter>ZPlugin</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\ZPlugin\Platforms\wp8\Wrapper.cpp">
-      <Filter>ZPlugin\wp8</Filter>
+    <ClCompile Include="..\..\..\ZPlugin\Platforms\wp8\PluginWrapper.cpp">
+      <Filter>ZPlugin</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -92,8 +92,11 @@
     <ClInclude Include="..\..\..\ZPlugin\PluginFactory.h">
       <Filter>ZPlugin</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\ZPlugin\Platforms\wp8\Wrapper.h">
-      <Filter>ZPlugin\wp8</Filter>
+    <ClInclude Include="..\..\..\ZPlugin\Platforms\wp8\PluginWrapper.h">
+      <Filter>ZPlugin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ZPlugin\ICommandHandler.h">
+      <Filter>ZPlugin</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -108,9 +111,6 @@
     </Filter>
     <Filter Include="ZPlugin">
       <UniqueIdentifier>{96f68a74-5356-4b90-8e60-c00874b79d4a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ZPlugin\wp8">
-      <UniqueIdentifier>{72142787-621b-4e99-bff1-adce854abd15}</UniqueIdentifier>
     </Filter>
     <Filter Include="Classes\ZPlugins">
       <UniqueIdentifier>{ecffde87-cff2-43a3-9ace-e8cff5a12c07}</UniqueIdentifier>

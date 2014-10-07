@@ -93,6 +93,9 @@ namespace PhoneDirect3DXamlAppInterop
                 m_d3dInterop.SetCocos2dEventDelegate(OnCocos2dEvent);
                 m_d3dInterop.SetCocos2dMessageBoxDelegate(OnCocos2dMessageBoxEvent);
                 m_d3dInterop.SetCocos2dEditBoxDelegate(OpenEditBox);
+
+                // initialize zplugin
+                PhoneDirect3DXamlAppInterop.CommandHandler zpluginHandler = new PhoneDirect3DXamlAppInterop.CommandHandler();
             }
         }
 

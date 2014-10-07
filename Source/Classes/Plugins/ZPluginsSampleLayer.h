@@ -1,5 +1,5 @@
-#ifndef __PLUGIN_SAMPLE_LAYER_H__
-#define __PLUGIN_SAMPLE_LAYER_H__
+#ifndef __ZPLUGIN_SAMPLE_LAYER_H__
+#define __ZPLUGIN_SAMPLE_LAYER_H__
 
 #include "cocos2d.h"
 #include "Headers.h"
@@ -12,19 +12,19 @@
 * http://discuss.cocos2d-x.org/t/share-iap-for-windows-phone-8/12701/10
 * http://discuss.cocos2d-x.org/t/wp8-c-call-c-function-with-param/11302/2
 */
-class PluginsSampleLayer : public LayerBase
+class ZPluginsSampleLayer : public LayerBase
 {
 
 public:
 
 	/** Destructor por defecto de la clase */
-	virtual ~PluginsSampleLayer(void);
+	virtual ~ZPluginsSampleLayer(void);
 
 	/** 
 	* Macro que sera desplegada en un metodo estatico 'create' para crear e inicializar la instancia de la clase.
-	* La instancia de la clase debe ser creada invocando el metodo 'PluginsSampleLayer::create()'
+	* La instancia de la clase debe ser creada invocando el metodo 'ZPluginsSampleLayer::create()'
 	*/
-	CREATE_FUNC(PluginsSampleLayer);
+	CREATE_FUNC(ZPluginsSampleLayer);
 
 
 	// se hace uso de la macro de cocos2dx para definir el acceso de metodos heredados
@@ -39,12 +39,12 @@ CC_CONSTRUCTOR_ACCESS:
 
 protected:
 
-	/** Constructor por defecto de la clase (protegido para evitar que se creen instancias desde fuera de la clase, deben crearse mediante el metodo 'PluginsSampleLayer::create()')*/
-	PluginsSampleLayer(void);
+	/** Constructor por defecto de la clase (protegido para evitar que se creen instancias desde fuera de la clase, deben crearse mediante el metodo 'ZPluginsSampleLayer::create()')*/
+	ZPluginsSampleLayer(void);
 
 
 };
 
 
-#endif // __PLUGIN_SAMPLE_LAYER_H__
+#endif // __ZPLUGIN_SAMPLE_LAYER_H__
 

@@ -29,17 +29,17 @@
     <ClCompile Include="..\..\Classes\MainMenuLayer.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Classes\Plugins\PluginsSampleLayer.cpp">
-      <Filter>Classes\Plugins</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Classes\Sprites\SpritesSampleLayer.cpp">
       <Filter>Classes\Sprites</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Plugins\PluginFactory.cpp">
-      <Filter>Plugins</Filter>
+    <ClCompile Include="..\..\Classes\Plugins\ZPluginsSampleLayer.cpp">
+      <Filter>Classes\ZPlugins</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Plugins\platforms\wp8\Wrapper.cpp">
-      <Filter>Plugins\wp8</Filter>
+    <ClCompile Include="..\..\..\ZPlugin\PluginFactory.cpp">
+      <Filter>ZPlugin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ZPlugin\Platforms\wp8\Wrapper.cpp">
+      <Filter>ZPlugin\wp8</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -80,20 +80,20 @@
     <ClInclude Include="..\..\Classes\MainMenuLayer.h">
       <Filter>Classes</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Classes\Plugins\PluginsSampleLayer.h">
-      <Filter>Classes\Plugins</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Classes\Sprites\SpritesSampleLayer.h">
       <Filter>Classes\Sprites</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Plugins\IPlugin.h">
-      <Filter>Plugins</Filter>
+    <ClInclude Include="..\..\Classes\Plugins\ZPluginsSampleLayer.h">
+      <Filter>Classes\ZPlugins</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Plugins\PluginFactory.h">
-      <Filter>Plugins</Filter>
+    <ClInclude Include="..\..\..\ZPlugin\IPlugin.h">
+      <Filter>ZPlugin</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Plugins\platforms\wp8\Wrapper.h">
-      <Filter>Plugins\wp8</Filter>
+    <ClInclude Include="..\..\..\ZPlugin\PluginFactory.h">
+      <Filter>ZPlugin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ZPlugin\Platforms\wp8\Wrapper.h">
+      <Filter>ZPlugin\wp8</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -103,17 +103,17 @@
     <Filter Include="src">
       <UniqueIdentifier>{6fcff44b-bb9f-4ed9-8553-558855bc91e3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\Plugins">
-      <UniqueIdentifier>{ecffde87-cff2-43a3-9ace-e8cff5a12c07}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Classes\Sprites">
       <UniqueIdentifier>{e0ee6b57-1ac4-4f4b-8c9e-80a967e2eef1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Plugins">
+    <Filter Include="ZPlugin">
       <UniqueIdentifier>{96f68a74-5356-4b90-8e60-c00874b79d4a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Plugins\wp8">
+    <Filter Include="ZPlugin\wp8">
       <UniqueIdentifier>{72142787-621b-4e99-bff1-adce854abd15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\ZPlugins">
+      <UniqueIdentifier>{ecffde87-cff2-43a3-9ace-e8cff5a12c07}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -90,7 +90,7 @@
       <CompileAsWinRT>true</CompileAsWinRT>
       <ForcedIncludeFiles>pch.h</ForcedIncludeFiles>
       <AdditionalOptions>/Zm200 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>$(EngineRoot)cocos\plugin\protocols\include;$(ProjectDir)..\..\Classes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\ZPlugin;$(ProjectDir)..\..\Classes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -203,13 +203,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Plugins\platforms\wp8\Wrapper.cpp" />
-    <ClCompile Include="..\..\..\Plugins\PluginFactory.cpp" />
+    <ClCompile Include="..\..\..\ZPlugin\Platforms\wp8\Wrapper.cpp" />
+    <ClCompile Include="..\..\..\ZPlugin\PluginFactory.cpp" />
     <ClCompile Include="..\..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\..\Classes\LayerBase.cpp" />
     <ClCompile Include="..\..\Classes\MainMenuLayer.cpp" />
-    <ClCompile Include="..\..\Classes\Plugins\PluginsSampleLayer.cpp" />
+    <ClCompile Include="..\..\Classes\Plugins\ZPluginsSampleLayer.cpp" />
     <ClCompile Include="..\..\Classes\Sprites\SpritesSampleLayer.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Create</PrecompiledHeader>
@@ -224,16 +224,16 @@
     <ClCompile Include="src\EditBoxEvent.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Plugins\platforms\wp8\Wrapper.h" />
-    <ClInclude Include="..\..\..\Plugins\PluginFactory.h" />
-    <ClInclude Include="..\..\..\Plugins\IPlugin.h" />
+    <ClInclude Include="..\..\..\ZPlugin\IPlugin.h" />
+    <ClInclude Include="..\..\..\ZPlugin\Platforms\wp8\Wrapper.h" />
+    <ClInclude Include="..\..\..\ZPlugin\PluginFactory.h" />
     <ClInclude Include="..\..\Classes\AppDelegate.h" />
     <ClInclude Include="..\..\Classes\BasicScene.h" />
     <ClInclude Include="..\..\Classes\Headers.h" />
     <ClInclude Include="..\..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\..\Classes\LayerBase.h" />
     <ClInclude Include="..\..\Classes\MainMenuLayer.h" />
-    <ClInclude Include="..\..\Classes\Plugins\PluginsSampleLayer.h" />
+    <ClInclude Include="..\..\Classes\Plugins\ZPluginsSampleLayer.h" />
     <ClInclude Include="..\..\Classes\Sprites\SpritesSampleLayer.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="src\Cocos2dRenderer.h" />

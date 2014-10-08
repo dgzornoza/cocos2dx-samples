@@ -20,7 +20,7 @@ public:
 	virtual void Exec( Platform::String ^Command, Platform::String ^Param); 
 };
 
-} // namespace cocos2d { namespace zplugin
+} // namespace PhoneDirect3DXamlAppComponent
 
 #endif // CC_PLATFORM_WP8
 

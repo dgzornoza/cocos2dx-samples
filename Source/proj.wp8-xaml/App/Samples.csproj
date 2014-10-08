@@ -100,7 +100,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ZPlugins\CommandHandler.cs" />
+    <Compile Include="ZPlugins\NativeCommandHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />

@@ -203,7 +203,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\ZPlugin\Platforms\wp8\PlatformCommandHandler.cpp" />
+    <ClCompile Include="..\..\..\ZPlugin\PlatformCommandHandler.cpp" />
     <ClCompile Include="..\..\..\ZPlugin\PluginFactory.cpp" />
     <ClCompile Include="..\..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\..\Classes\HelloWorldScene.cpp" />
@@ -225,7 +225,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\ZPlugin\IPlugin.h" />
-    <ClInclude Include="..\..\..\ZPlugin\Platforms\wp8\PlatformCommandHandler.h" />
+    <ClInclude Include="..\..\..\ZPlugin\PlatformCommandHandler.h" />
     <ClInclude Include="..\..\..\ZPlugin\PluginFactory.h" />
     <ClInclude Include="..\..\Classes\AppDelegate.h" />
     <ClInclude Include="..\..\Classes\BasicScene.h" />

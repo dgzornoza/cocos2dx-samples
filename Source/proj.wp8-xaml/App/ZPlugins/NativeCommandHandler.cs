@@ -29,7 +29,7 @@ namespace PhoneDirect3DXamlAppInterop
             {
             });*/
 
-            System.Diagnostics.Debug.WriteLine("C# method---" + Command + "-----" + Param);
+            System.Diagnostics.Debug.WriteLine("C# method---" + _funcName + "-----" + _params);
 
         }
     }

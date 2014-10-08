@@ -38,7 +38,7 @@
     <ClCompile Include="..\..\..\ZPlugin\PluginFactory.cpp">
       <Filter>ZPlugin</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\ZPlugin\Platforms\wp8\PlatformCommandHandler.cpp">
+    <ClCompile Include="..\..\..\ZPlugin\PlatformCommandHandler.cpp">
       <Filter>ZPlugin</Filter>
     </ClCompile>
   </ItemGroup>
@@ -92,7 +92,7 @@
     <ClInclude Include="..\..\..\ZPlugin\PluginFactory.h">
       <Filter>ZPlugin</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\ZPlugin\Platforms\wp8\PlatformCommandHandler.h">
+    <ClInclude Include="..\..\..\ZPlugin\PlatformCommandHandler.h">
       <Filter>ZPlugin</Filter>
     </ClInclude>
   </ItemGroup>

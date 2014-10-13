@@ -38,8 +38,14 @@
     <ClCompile Include="..\..\..\ZPlugin\PluginFactory.cpp">
       <Filter>ZPlugin</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\ZPlugin\PlatformCommandHandler.cpp">
+    <ClCompile Include="..\..\..\ZPlugin\CommandHandler.cpp">
       <Filter>ZPlugin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\LanguageManager.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Toolkit\StringUtils.cpp">
+      <Filter>Toolkit</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -92,8 +98,17 @@
     <ClInclude Include="..\..\..\ZPlugin\PluginFactory.h">
       <Filter>ZPlugin</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\ZPlugin\PlatformCommandHandler.h">
+    <ClInclude Include="..\..\..\ZPlugin\ZMedia\ZMediaPlugin.h">
+      <Filter>ZPlugin\ZMedia</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ZPlugin\CommandHandler.h">
       <Filter>ZPlugin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\LanguageManager.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Toolkit\StringUtils.h">
+      <Filter>Toolkit</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +126,12 @@
     </Filter>
     <Filter Include="Classes\ZPlugins">
       <UniqueIdentifier>{ecffde87-cff2-43a3-9ace-e8cff5a12c07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ZPlugin\ZMedia">
+      <UniqueIdentifier>{805cc622-d3c7-443f-a349-ab4da37ea8cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Toolkit">
+      <UniqueIdentifier>{f912eac0-74ba-4bfc-9b25-6f4787b4b641}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

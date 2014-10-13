@@ -1,5 +1,7 @@
 #include "ZPluginsSampleLayer.h"
 
+#include "ZPlugin/PluginFactory.h"
+#include "ZPlugin/ZMedia/ZMediaPlugin.h"
 
 using namespace cocos2d;
 
@@ -26,6 +28,9 @@ bool ZPluginsSampleLayer::init()
 	// Inicializar clase
 
 	// .......
+
+	zplugin::zmedia::ZMedia* zmediaPlugin = zplugin::PluginFactory::getInstance()->loadPlugin<zplugin::zmedia::ZMedia>("zmedia");
+	zmediaPlugin->test();
 
 	// inicializacion correcta
 	return true;

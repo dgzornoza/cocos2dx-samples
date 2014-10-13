@@ -1,4 +1,5 @@
 #include "MainMenuLayer.h"
+#include "LanguageManager.h"
 
 using namespace cocos2d;
 
@@ -9,33 +10,32 @@ namespace
 	typedef struct st_testList
 	{
 		/** Nombre del test */
-		const char* name;
+		std::string name;
 		/** Puntero a la funcion con la escena del test a ejecutar */
 		std::function<Scene*()> callback;
 
 	} TestList;
 
 	/** Estructura para crear la lista de tests de la aplicacion */
-	TestList g_testList[] = {
-				
-		//
-		// TESTS ORDENADOS ALFABETICAMENTE
-		//
-		{ "Ejemplo Sprites", [](){ return BasicScene<SpritesSampleLayer>::create(); } },
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT || CC_TARGET_PLATFORM == CC_PLATFORM_WP8 || CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_PLATFORM_WP8 == CC_PLATFORM_IOS )
-		{ "Ejemplo ZPlugins", [](){ return BasicScene<ZPluginsSampleLayer>::create(); } },
-#endif
+	std::vector<TestList> g_testList;
 
-	};
 
 	/** Numero de elementos de la lista con los tests */
-	static int g_testListCount = sizeof(g_testList) / sizeof(g_testList[0]);
+	static int g_testListCount;
 }
 
 /** Constructor por defecto de la clase */
 MainMenuLayer::MainMenuLayer(void)
 {
+	// inicializar lista de tests
+	g_testList.push_back({ LanguageManager::getInstance()->localize("SpritesSampleLayer.title"), [](){ return BasicScene<SpritesSampleLayer>::create(); } });
 
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT || CC_TARGET_PLATFORM == CC_PLATFORM_WP8 || CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_PLATFORM_WP8 == CC_PLATFORM_IOS )
+	g_testList.push_back({ LanguageManager::getInstance()->localize("ZPluginsSampleLayer.title"), [](){ return BasicScene<SpritesSampleLayer>::create(); } });
+#endif
+
+	// guardar el numero de elementos
+	g_testListCount = g_testList.size();
 }
 
 /** Destructor por defecto de la clase */

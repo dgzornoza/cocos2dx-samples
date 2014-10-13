@@ -447,7 +447,7 @@ public:
      *
      * @return LayoutParameter
      */
-    LayoutParameter* getLayoutParameter()const override;
+    LayoutParameter* getLayoutParameter() const override;
     CC_DEPRECATED_ATTRIBUTE LayoutParameter* getLayoutParameter(LayoutParameter::Type type);
 
 

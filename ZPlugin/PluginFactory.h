@@ -2,6 +2,8 @@
 #define __ZPLUGIN_PLUGINFACTORY_H__
 
 #include "IPlugin.h"
+#include "ZPlugin\ZMedia\ZMediaPlugin.h"
+
 #include <map>
 #include <string>
 #include <type_traits> 
@@ -35,7 +37,7 @@ public:
 		static_assert(std::is_base_of<IPlugin, TPlugin>::value, "TPlugin don´t inherit from IPlugin"); 
 
 		// verify plugin name
-		CCASSERT(_pluginName == nullptr || strlen(_pluginName) == 0, "Plugin name is required");
+		CCASSERT(_pluginName != nullptr && strlen(_pluginName) != 0, "Plugin name is required");
 
 		// result
 		TPlugin* plugin = nullptr;
@@ -47,7 +49,7 @@ public:
 		{
 			// verify plugin pointer, create if not found and insert in plugins map
 			if (it->second == nullptr) it->second = new TPlugin();
-			CCASSERT(plugin = (TPlugin*)it->second, "Already plugin loaded with other type.");			
+			CCASSERT(plugin != (TPlugin*)it->second, "Already plugin loaded with other type.");			
 		}
 		// not found. create plugin and insert in plugin map
 		else

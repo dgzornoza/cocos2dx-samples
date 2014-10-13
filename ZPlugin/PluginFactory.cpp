@@ -30,7 +30,7 @@ PluginFactory::~PluginFactory()
 PluginFactory* PluginFactory::getInstance()
 {
 	// create only first
-	if (s_pluginFactory == nullptr) s_pluginFactory = new PluginFactory();
+	if (nullptr == s_pluginFactory) s_pluginFactory = new PluginFactory();
 
     return s_pluginFactory;
 }

@@ -31,6 +31,8 @@
 #include "base/CCRef.h"
 #include "base/ccMacros.h"
 
+#pragma warning(disable:4996)
+
 NS_CC_BEGIN
 
 namespace network {

@@ -10,15 +10,15 @@ namespace PhoneDirect3DXamlAppInterop
     /// zplugin native command handler for cocos2dx interop.
     /// this class handle comunication platform native code -> cocos2dx.
     /// </summary>
-    public class NativeCommandHandler : PhoneDirect3DXamlAppComponent.ICommandHandler
+    public class PlatformCommandHandler : PhoneDirect3DXamlAppComponent.IPlatformCommandHandler
     {
         /// <summary>
         /// default constructor
         /// </summary>
-        public NativeCommandHandler()
+        public PlatformCommandHandler()
         {
             System.Diagnostics.Debug.WriteLine("in c-sharp constructor");
-            PhoneDirect3DXamlAppComponent.PlatformCommandHandler.setCommandHandler(this);
+            PhoneDirect3DXamlAppComponent.CommandHandler.setPlatformCommandHandler(this);
         }
 
 

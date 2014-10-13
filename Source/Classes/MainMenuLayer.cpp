@@ -31,7 +31,7 @@ MainMenuLayer::MainMenuLayer(void)
 	g_testList.push_back({ LanguageManager::getInstance()->localize("SpritesSampleLayer.title"), [](){ return BasicScene<SpritesSampleLayer>::create(); } });
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT || CC_TARGET_PLATFORM == CC_PLATFORM_WP8 || CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_PLATFORM_WP8 == CC_PLATFORM_IOS )
-	g_testList.push_back({ LanguageManager::getInstance()->localize("ZPluginsSampleLayer.title"), [](){ return BasicScene<SpritesSampleLayer>::create(); } });
+	g_testList.push_back({ LanguageManager::getInstance()->localize("ZPluginsSampleLayer.title"), [](){ return BasicScene<ZPluginsSampleLayer>::create(); } });
 #endif
 
 	// guardar el numero de elementos

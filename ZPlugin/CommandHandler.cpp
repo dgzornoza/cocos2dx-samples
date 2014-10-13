@@ -21,16 +21,14 @@ void CommandHandler::setPlatformCommandHandler(IPlatformCommandHandler^ _nativeC
 }
 
 /** function for execute platform code using the input parameters */
-void CommandHandler::execPlatformCommand(Platform::String^ _className, Platform::String^ _funcName, Platform::String^ _params)
+void CommandHandler::execPlatformCommand(CompletedFunc^ _successCallback, CompletedFunc^ _errorCallback, Platform::String^ _className, Platform::String^ _funcName, Platform::String^ _params)
 {
 	// verify command handler
 	if (nullptr == g_platformCommandHandler) return;
 		
 	// invoke command handler in native platform using the input parameters
-	g_platformCommandHandler->exec(_className, _funcName, _params);
+	g_platformCommandHandler->exec(_successCallback, _errorCallback, _className, _funcName, _params);
 }
-
-
 
 
 } // namespace PhoneDirect3DXamlAppComponent

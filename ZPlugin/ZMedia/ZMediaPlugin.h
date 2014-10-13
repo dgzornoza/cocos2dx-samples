@@ -70,7 +70,17 @@ public:
 	void test()
 	{
 		// invocar codigo nativo del dispositivo
-		this->exec("ZMedia", "test", "prueba de parametros");
+		this->exec(
+			[](const std::string& _str)
+		{
+			int a = 234;
+			int b = a * 5;
+		},
+			[](const std::string& _str){
+			int a = 234;
+			int b = a * 5;
+		},
+			"ZMedia", "test", "prueba de parametros");
 	}
 
 	/**

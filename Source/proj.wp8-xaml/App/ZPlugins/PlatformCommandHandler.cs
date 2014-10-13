@@ -21,15 +21,22 @@ namespace PhoneDirect3DXamlAppInterop
             PhoneDirect3DXamlAppComponent.CommandHandler.setPlatformCommandHandler(this);
         }
 
-
-        public void exec(String _className, String _funcName, String _params)
+        public void exec(PhoneDirect3DXamlAppComponent.CompletedFunc _successCallback, PhoneDirect3DXamlAppComponent.CompletedFunc _errorCallback, string _className, string _funcName, string _params)
         {
             //Execute some C# code, if you call UI stuff you will need to call this too
             /*Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
             });*/
-
-            System.Diagnostics.Debug.WriteLine("C# method---" + _funcName + "-----" + _params);
+            try
+            {
+                string result = "C# method---" + _funcName + "------" + _params;
+                System.Diagnostics.Debug.WriteLine(result);
+                _successCallback(result);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
 
         }
     }

@@ -6,6 +6,12 @@
 
 namespace PhoneDirect3DXamlAppComponent {
 
+/**
+* delegate to invoke from platform command handler on finish command
+* @param _jsonResult json result formed by 'status, message' ej: "\"status\":{0},\"message\":{1}"
+*/
+public delegate void CompletedFunc(Platform::String^ _jsonResult);
+
 /** 
 * @brief zplugin interface for platform command handler.
 * this interface declare methods for handle comunication between platform native code and cocos2dx.
@@ -16,11 +22,14 @@ public interface class IPlatformCommandHandler
 public:
 
 	/** virtual function for implement in platform command handler for execute platform code
+	* @param _successCallback callback for success result
+	* @param _errorCallback callback for success result
 	* @param _className Class name in platform code with the function to execute
 	* @param _funcName Function name in the class to execute
 	* @param _params parameters to invoke the function, for complex objects can use json string.
 	*/
-	virtual void exec(Platform::String^ _className, Platform::String^ _funcName, Platform::String^ _params);
+	virtual void exec(CompletedFunc^ _successCallback, CompletedFunc^ _errorCallback, Platform::String^ _className, Platform::String^ _funcName, Platform::String^ _params);
+
 };
 
 /** 
@@ -38,11 +47,13 @@ public:
 	static void setPlatformCommandHandler(IPlatformCommandHandler^ _platformCommandHandler);
 
 	/** function for execute platform code using the input parameters
+	* @param _successCallback callback for success result
+	* @param _errorCallback callback for success result
 	* @param _className Class name in platform code with the function to execute
 	* @param _funcName Function name in the class to execute
 	* @param _params parameters to invoke the function, for complex objects can use json string.
 	*/
-	static void execPlatformCommand(Platform::String^ _className, Platform::String^ _funcName, Platform::String^ _params);
+	static void execPlatformCommand(CompletedFunc^ _successCallback, CompletedFunc^ _errorCallback, Platform::String^ _className, Platform::String^ _funcName, Platform::String^ _params);
 
 };
 

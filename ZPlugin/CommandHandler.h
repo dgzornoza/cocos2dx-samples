@@ -23,7 +23,7 @@ public:
 
 	/** virtual function for implement in platform command handler for execute platform code
 	* @param _successCallback callback for success result
-	* @param _errorCallback callback for success result
+	* @param _errorCallback callback for error result
 	* @param _className Class name in platform code with the function to execute
 	* @param _funcName Function name in the class to execute
 	* @param _params parameters to invoke the function, for complex objects can use json string.
@@ -48,7 +48,7 @@ public:
 
 	/** function for execute platform code using the input parameters
 	* @param _successCallback callback for success result
-	* @param _errorCallback callback for success result
+	* @param _errorCallback callback for error result
 	* @param _className Class name in platform code with the function to execute
 	* @param _funcName Function name in the class to execute
 	* @param _params parameters to invoke the function, for complex objects can use json string.

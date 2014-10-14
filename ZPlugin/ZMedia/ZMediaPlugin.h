@@ -80,7 +80,7 @@ public:
 			int a = 234;
 			int b = a * 5;
 		},
-			"ZMedia", "test", "prueba de parametros");
+			"com.dgzornoza.cordova.plugins.ZMedia", "test", "prueba de parametros");
 	}
 
 	/**
@@ -92,19 +92,22 @@ public:
 	* @param {Function} _errorCallback: funcion que sera llamada si en la peticion ocurre un error, la funcion obtendra un parametro con una cadena conteniendo el error
 	* @param {Function} _allwaysCallback: funcion que sera llamada siempre tras la peticion, ocurra un error o no.
 	*/
-	//void GetAlbumItems(_albumFilter) 
-	//{
-	//	// invocar codigo nativo del dispositivo
-	//	exec(function (_result) {
-	//		_successCallback(_result);
-	//		_allwaysCallback();
-	//	},
-	//		function (_error) {
-	//			_errorCallback(_error);
-	//			_allwaysCallback();
-	//		},
-	//		'ZMedia', 'GetAlbumItems', [JSON.stringify(_albumFilter)]);
-	//};
+	void GetAlbumItems() 
+	{
+		// invocar codigo nativo del dispositivo
+		this->exec(
+			[](const std::string& _result)
+		{
+			int a = 234;
+			int b = a * 5;
+		},
+			[](const std::string& _error){
+			int a = 234;
+			int b = a * 5;
+		},
+		"com.dgzornoza.cordova.plugins.ZMedia", "GetAlbumItems", "[\"{\\\"Path\\\":\\\"/\\\",\\\"AlbumType\\\":0}\"]");
+																
+	};
 
 	/// @} End Properties setter/getters
 

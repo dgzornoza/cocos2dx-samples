@@ -35,7 +35,7 @@ protected:
 	/**
      * Method for invoke platform native code
 	 * @param _successCallback callback for success result
-	 * @param _errorCallback callback for success result
+	 * @param _errorCallback callback for error result
 	 * @param _className class namespace and name
 	 * @param _funcName function name to execute
 	 * @param _params function parameters

@@ -95,7 +95,7 @@ namespace PhoneDirect3DXamlAppInterop
                 m_d3dInterop.SetCocos2dEditBoxDelegate(OpenEditBox);
 
                 // initialize zplugin
-                PhoneDirect3DXamlAppInterop.PlatformCommandHandler zpluginHandler = new PhoneDirect3DXamlAppInterop.PlatformCommandHandler();
+                PhoneDirect3DXamlAppInterop.ZPlugins.PlatformCommandHandler zpluginHandler = new PhoneDirect3DXamlAppInterop.ZPlugins.PlatformCommandHandler();
             }
         }
 

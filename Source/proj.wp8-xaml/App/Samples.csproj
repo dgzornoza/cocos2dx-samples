@@ -107,7 +107,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ZPlugins\com.dgzornoza.cordova.zmedia\AlbumItems.cs" />
+    <Compile Include="ZPlugins\com.dgzornoza.cordova.zmedia\Helpers.cs" />
+    <Compile Include="ZPlugins\com.dgzornoza.cordova.zmedia\Models\AlbumModels.cs" />
+    <Compile Include="ZPlugins\com.dgzornoza.cordova.zmedia\ZMedia.cs" />
+    <Compile Include="ZPlugins\JsonHelper.cs" />
+    <Compile Include="ZPlugins\BaseCommand.cs" />
     <Compile Include="ZPlugins\PlatformCommandHandler.cs" />
+    <Compile Include="ZPlugins\PluginResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

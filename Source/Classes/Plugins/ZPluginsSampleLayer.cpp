@@ -30,7 +30,7 @@ bool ZPluginsSampleLayer::init()
 	// .......
 
 	zplugin::zmedia::ZMedia* zmediaPlugin = zplugin::PluginFactory::getInstance()->loadPlugin<zplugin::zmedia::ZMedia>("zmedia");
-	zmediaPlugin->test();
+	zmediaPlugin->GetAlbumItems();
 
 	// inicializacion correcta
 	return true;

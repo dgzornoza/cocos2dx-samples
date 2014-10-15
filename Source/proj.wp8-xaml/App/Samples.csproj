@@ -78,7 +78,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Bin\ARM\Debug</OutputPath>
-    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;COSOS2DX</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
@@ -217,10 +217,6 @@
     </Content>
     <Content Include="..\..\Resources\HDR\MainMenu\gui.png">
       <Link>Assets\Resources\HDR\MainMenu\gui.png</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\..\Resources\HDR\Thumbs.db">
-      <Link>Assets\Resources\HDR\Thumbs.db</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="..\..\Resources\HD\MainMenu\gui.plist">

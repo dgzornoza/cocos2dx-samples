@@ -67,7 +67,7 @@ std::string LanguageManager::localize(std::string _key)
 	}
 		
 	// obtener la cadena y retornarla
-	CC_ASSERT(currentObj.IsString(), "Error in JSON file for language, value should be string");
+	CCASSERT(currentObj.IsString(), "Error in JSON file for language, value should be string");
 
 	return currentObj.GetString();
 }

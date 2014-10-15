@@ -2,7 +2,7 @@
 #define __ZPLUGIN_PLUGINFACTORY_H__
 
 #include "IPlugin.h"
-#include "ZPlugin\ZMedia\ZMediaPlugin.h"
+#include "ZPlugin/ZMedia/ZMediaPlugin.h"
 
 #include <map>
 #include <string>

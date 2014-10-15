@@ -37,8 +37,14 @@ namespace com.dgzornoza.cordova.plugins.Models
         /// <summary>Tipo de item en el albun</summary>
         public enumAlbumItemTypes ItemType { get; set; }
 
+#if COSOS2DX
+        /// <summary>Image del item</summary>
+        public byte[] Image { get; set; }
+#else
         /// <summary>Image del item en base 64</summary>
         public string Image { get; set; }
+#endif
+
     }
 
     /// <summary>

@@ -69,7 +69,11 @@ namespace com.dgzornoza.cordova.plugins
                         {
                             Name = item.Name,
                             ItemType = enumAlbumItemTypes.ALBUM,
+#if COSOS2DX
+                            Image = img.GetThumbnail().
+#else
                             Image = img.GetThumbnail().ConvertToBase64()
+#endif
                         };
                     }).
                     OfType<AlbumItemModel>().    // ignorar valores nulos
@@ -78,7 +82,11 @@ namespace com.dgzornoza.cordova.plugins
                     {
                         Name = item.Name,
                         ItemType = enumAlbumItemTypes.IMAGE,
+#if COSOS2DX
+                        Image = item.GetThumbnail()
+#else
                         Image = item.GetThumbnail().ConvertToBase64()
+#endif
                     })).ToArray();
             }
 

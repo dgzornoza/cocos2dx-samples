@@ -60,7 +60,7 @@ namespace com.dgzornoza.cordova.plugins
         public void GetAlbumItems(string _params)
         {
             PluginResult result = null;
-
+            GC.Collect();
             try
             {
                 var json = JsonHelper.Deserialize<string[]>(_params);

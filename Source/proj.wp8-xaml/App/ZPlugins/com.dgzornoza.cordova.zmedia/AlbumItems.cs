@@ -70,20 +70,20 @@ namespace com.dgzornoza.cordova.plugins
                             Name = item.Name,
                             ItemType = enumAlbumItemTypes.ALBUM,
 #if COSOS2DX
-                            Image = img.GetThumbnail().
+                            Image = img.GetThumbnail().GetBytes()
 #else
                             Image = img.GetThumbnail().ConvertToBase64()
 #endif
                         };
                     }).
                     OfType<AlbumItemModel>().    // ignorar valores nulos
-                    Concat(                             // Concatenar con los items de tipo imagen                    
+                    Concat(                      // Concatenar con los items de tipo imagen                    
                     album.Pictures.Select(item => new AlbumItemModel()
                     {
                         Name = item.Name,
                         ItemType = enumAlbumItemTypes.IMAGE,
 #if COSOS2DX
-                        Image = item.GetThumbnail()
+                        Image = item.GetThumbnail().GetBytes()
 #else
                         Image = item.GetThumbnail().ConvertToBase64()
 #endif

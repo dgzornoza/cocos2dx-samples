@@ -43,6 +43,7 @@ protected:
 	ZPluginsSampleLayer(void);
 
 
+	void _createTestButton(cocos2d::ui::Layout* _layout);
 };
 
 

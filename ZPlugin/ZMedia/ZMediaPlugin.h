@@ -2,6 +2,7 @@
 #define __ZPLUGIN_ZMEDIA_H__
 
 #include "ZPlugin/IPlugin.h"
+#include "external/json/document.h"
 
 /**
 * @addtogroup ZPlugin
@@ -92,20 +93,12 @@ public:
 	* @param {Function} _errorCallback: funcion que sera llamada si en la peticion ocurre un error, la funcion obtendra un parametro con una cadena conteniendo el error
 	* @param {Function} _allwaysCallback: funcion que sera llamada siempre tras la peticion, ocurra un error o no.
 	*/
-	void GetAlbumItems() 
+	void GetAlbumItems(std::function<void(const std::string&)> _successCallback, std::function<void(const std::string&)> _errorCallback)
 	{
 		// invocar codigo nativo del dispositivo
 		this->exec(
-			[](const std::string& _result)
-		{
-			int a = 234;
-			int b = a * 5;
-		},
-			[](const std::string& _error){
-			int a = 234;
-			int b = a * 5;
-		},
-		"com.dgzornoza.cordova.plugins.ZMedia", "GetAlbumItems", "[\"{\\\"Path\\\":\\\"/\\\",\\\"AlbumType\\\":0}\"]");
+			_successCallback, _errorCallback,
+			"com.dgzornoza.cordova.plugins.ZMedia", "GetAlbumItems", "[\"{\\\"Path\\\":\\\"/Camera Roll\\\",\\\"AlbumType\\\":0}\"]");
 																
 	};
 

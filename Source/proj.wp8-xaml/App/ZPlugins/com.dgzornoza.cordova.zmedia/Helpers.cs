@@ -48,16 +48,24 @@ namespace com.dgzornoza.cordova.plugins
         /// <returns>cadena en base 64 con el stream</returns>
         public static string ConvertToBase64(this System.IO.Stream _stream)
         {
-            string result = null;
-            using (System.IO.Stream stream = _stream)
-            {
-                // convertir el stream a base64
-                byte[] bytes = new byte[stream.Length];
-                stream.Read(bytes, 0, bytes.Length);
-                result = Convert.ToBase64String(bytes);
-            }
+            // convertir el stream a base64
+            byte[] bytes = _stream.GetBytes();
+            string result = Convert.ToBase64String(bytes);
 
             return result;
+        }
+
+        /// <summary>
+        /// Metodo extensor para convertir un stream en una cadena en base64
+        /// </summary>
+        /// <param name="_stream">Stream a convertir</param>
+        /// <returns>cadena en base 64 con el stream</returns>
+        public static byte[]  GetBytes(this System.IO.Stream _stream)
+        {
+            byte[] bytes = new byte[_stream.Length];
+            _stream.Read(bytes, 0, bytes.Length);
+
+            return bytes;
         }
     }
 }

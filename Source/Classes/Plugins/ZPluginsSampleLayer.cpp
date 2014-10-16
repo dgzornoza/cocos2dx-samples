@@ -78,13 +78,18 @@ bool ZPluginsSampleLayer::init()
 				//	data[k] = (unsigned char)image[k].GetInt();
 				//}
 				//
-				//Image* img = Image::initWithImageData(data, size);
+				//Image* img = new Image();
+				//img->initWithImageData(data, size);
+				//Texture2D* texture = Director::getInstance()->getTextureCache()->addImage(img, jsonMessage[i]["Name"].GetString());
+				//Sprite* sprite = Sprite::createWithTexture(texture);
+				//
+				//auto* a = ui::Widget::create();
+				//a->addChild(sprite);
+				//lv->pushBackCustomItem(a);
 
+				//delete img;
 				//delete data;
-
-				//Sprite* sprite = Sprite::create("HelloWorld.png");
-
-				//lv->pushBackCustomItem(sprite);
+				
 
 				
 				// Texto

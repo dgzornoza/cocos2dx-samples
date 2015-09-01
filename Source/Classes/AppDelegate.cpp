@@ -21,8 +21,8 @@ AppDelegate::~AppDelegate()
 
 void AppDelegate::initGLContextAttrs()
 {
-	//set OpenGL context attributions,now can only set six attributions:
-	//red,green,blue,alpha,depth,stencil
+	// establecer el contexto OpenGL, ahora puede establecerse solo 6 atributos
+	// rojo, verde, azul, alfa, profundidad, plantilla
 	GLContextAttrs glContextAttrs = { 8, 8, 8, 8, 24, 8 };
 
 	GLView::setGLContextAttrs(glContextAttrs);

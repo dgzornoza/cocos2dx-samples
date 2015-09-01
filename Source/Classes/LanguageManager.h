@@ -3,7 +3,7 @@
 
 #include <string>
 #include "cocos2d.h"
-#include "external/json/document.h"
+#include "json\document.h"
 
 
 /** 

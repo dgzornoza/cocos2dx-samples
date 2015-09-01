@@ -132,6 +132,9 @@ UpgradeLog*.htm
 App_Data/*.mdf
 App_Data/*.ldf
 
+*.lastbuildstate
+*.idb
+*.tlog
 
 #LightSwitch generated files
 GeneratedArtifacts/
@@ -155,13 +158,14 @@ $RECYCLE.BIN/
 # Mac desktop service store files
 .DS_Store
 
+
+
 # Excluir directorios especificos
-/Source/cocos2d/cocos/2d/Debug.win32
-/Source/cocos2d/cocos/audio/proj.win32/Debug.win32
-/Source/cocos2d/cocos/editor-support/cocostudio/proj.win32/Debug.win32
-/Source/cocos2d/cocos/ui/proj.win32/Debug.win32
-/Source/cocos2d/extensions/proj.win32/Debug.win32
-*.lastbuildstate
-*.idb
-*.tlog
-/Source/proj.win32/Debug.win32
+/Source/cocos2d
+/Source/proj.win10
+/Source/proj.win32
+/Source/proj.android-studio
+/Source/proj.android/.externalToolBuilders
+/Source/proj.android/.externalToolBuilders
+/Source/proj.ios_mac/ios
+/Source/proj.win8.1-universal

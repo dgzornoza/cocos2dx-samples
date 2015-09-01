@@ -5,32 +5,39 @@
 #include "Headers.h"
 
 /**
-@brief    The cocos2d Application.
+@brief La aplicacion cocos2dx.
 
-The reason for implement as private inheritance is to hide some interface call by Director.
+La razon para implementar como herencia privada es ocultar algunas interfaces invocadas por el director
 */
 class  AppDelegate : private cocos2d::Application
 {
 public:
+
+	/** Constructor por defecto de la clase */
     AppDelegate();
+	/** Destructor por defecto de la clase */
     virtual ~AppDelegate();
 
+	/*
+	 @brief Funcion para inicializar los atributos del contexto OpenGL
+	 @remarks is se quiere un contexto diferente puede modificarse el valor de glContextAttrs, esto tendra efecto en todas las plataformas
+	 */
+    virtual void initGLContextAttrs();
+
     /**
-    @brief    Implement Director and Scene init code here.
-    @return true    Initialize success, app continue.
-    @return false   Initialize failed, app terminate.
+    @brief  Funcion con el codigo de inicio de la escena y el director
+    @return true    Inicializacion correcta, continuar con la aplicacion.
+    @return false   Inicializacion incorrecta, terminar la aplicacon
     */
     virtual bool applicationDidFinishLaunching();
 
     /**
-    @brief  The function be called when the application enter background
-    @param  the pointer of the application
+    @brief  Funcion que sera invocada cuando la aplicacion entre en segundo plano
     */
     virtual void applicationDidEnterBackground();
 
     /**
-    @brief  The function be called when the application enter foreground
-    @param  the pointer of the application
+    @brief  Funcion que sera invocada cuando la aplicacion entre en primer plano
     */
     virtual void applicationWillEnterForeground();
 };

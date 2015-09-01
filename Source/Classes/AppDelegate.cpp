@@ -2,12 +2,36 @@
 
 using namespace cocos2d;
 
+// Resoluciones de diseño y de pantalla
+static cocos2d::Size s_designResolutionSize = cocos2d::Size(480, 320);		// 4 pixeles por pixel
+static cocos2d::Size s_sdResolutionSize = cocos2d::Size(480, 320);		// SD
+static cocos2d::Size s_hdResolutionSize = cocos2d::Size(960, 640);		// HD
+//static cocos2d::Size s_mediumResolutionSize = cocos2d::Size(1024, 768);
+static cocos2d::Size s_hdrResolutionSize = cocos2d::Size(1920, 1280);	// HDR
+//static cocos2d::Size s_largeResolutionSize = cocos2d::Size(2048, 1536);
+
 AppDelegate::AppDelegate() {
 
 }
 
 AppDelegate::~AppDelegate() 
 {
+}
+
+
+void AppDelegate::initGLContextAttrs()
+{
+	//set OpenGL context attributions,now can only set six attributions:
+	//red,green,blue,alpha,depth,stencil
+	GLContextAttrs glContextAttrs = { 8, 8, 8, 8, 24, 8 };
+
+	GLView::setGLContextAttrs(glContextAttrs);
+}
+
+/** Si se quiere usar package manager para instalar mas paquetes, no debe modificarse o eliminar esta funcion */
+static int register_all_packages()
+{
+	return 0; // flag para usar package manager
 }
 
 bool AppDelegate::applicationDidFinishLaunching() 
@@ -19,7 +43,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLView::create("SamplesGLView"); // 3:2
+        glview = GLViewImpl::create("SamplesGLView"); // 3:2
 		//glview = GLView::createWithRect("SamplesGLView", Rect(0,0, 1280, 1024)); // 5:4
 		//glview = GLView::createWithRect("SamplesGLView", Rect(0,0, 1280, 720)); // 16:9
 		//glview = GLView::createWithRect("SamplesGLView", Rect(0,0, 1067, 600)); // 16:9
@@ -45,32 +69,35 @@ bool AppDelegate::applicationDidFinishLaunching()
 	// MULTIRESOLUCION -----------------------------------------
 
 	// guardar dimensiones de pantalla y resolucion de diseño
-	Size screenSize = glview->getFrameSize();
-	Size designSize = Size(480, 320); // 4 pixeles por pixel
+	glview->setDesignResolutionSize(s_designResolutionSize.width, s_designResolutionSize.height, ResolutionPolicy::NO_BORDER);
+	Size frameSize = glview->getFrameSize();
+
+	// directorio a usar en recursos depediendo de la resolucion
+	std::vector<std::string> searchPaths;
 	
-	// guardar directorio y dimensiones usados en los recursos
-    std::vector<std::string> searchPaths;
-	Size resourceSize;
-	if (screenSize.width > 960)
-    {
-		resourceSize = Size(1920, 1280);
-        searchPaths.push_back("HDR");
-    }
-	else if (screenSize.width > 480)
-    {
-        resourceSize = Size(960, 640);
-        searchPaths.push_back("HD");
-    }
+	// establecer el factor de escala basado en el tamaño de los recursos y las dimensiones de diseño
+	// HDR
+	if (frameSize.height > s_hdResolutionSize.height)
+	{
+		director->setContentScaleFactor(MIN(s_hdrResolutionSize.height / s_designResolutionSize.height, s_hdrResolutionSize.width / s_designResolutionSize.width));
+		searchPaths.push_back("HDR");
+	}
+	// HD
+	else if (frameSize.height > s_sdResolutionSize.height)
+	{
+		director->setContentScaleFactor(MIN(s_hdResolutionSize.height / s_designResolutionSize.height, s_hdResolutionSize.width / s_designResolutionSize.width));
+		searchPaths.push_back("HD");
+	}
+	// SD
 	else
 	{
-		resourceSize = Size(480, 320);
+		director->setContentScaleFactor(MIN(s_sdResolutionSize.height / s_designResolutionSize.height, s_sdResolutionSize.width / s_designResolutionSize.width));
 		searchPaths.push_back("SD");
 	}
 
-	// establecer el factor de escala basado en el tamaño de los recursos y las dimensiones de diseño
-	director->setContentScaleFactor(resourceSize.width/designSize.width);
-	// establecer la resolucion de diseño
-	glview->setDesignResolutionSize(designSize.width, designSize.height, ResolutionPolicy::FIXED_HEIGHT);
+	// TODO: verificar que hace
+	register_all_packages();
+
 	// establecer directorios base de los recursos
 	FileUtils::getInstance()->setSearchPaths(searchPaths);
 
@@ -83,18 +110,21 @@ bool AppDelegate::applicationDidFinishLaunching()
     return true;
 }
 
-// This function will be called when the app is inactive. When comes a phone call,it's be invoked too
 void AppDelegate::applicationDidEnterBackground() {
+
+	// detener el bucle principal
     Director::getInstance()->stopAnimation();
 
-    // if you use SimpleAudioEngine, it must be pause
+	// si se usa SimpleAudioEngine, debe detenerse
     // SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
 }
 
 // this function will be called when the app is active again
 void AppDelegate::applicationWillEnterForeground() {
+	
+	// reanudar el bucle principal
     Director::getInstance()->startAnimation();
 
-    // if you use SimpleAudioEngine, it must resume here
+	// si se usa SimpleAudioEngine, debe resumirse
     // SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 }

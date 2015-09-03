@@ -1,5 +1,5 @@
 #include "LanguageManager.h"
-#include "Toolkit\StringUtils.h"
+#include "Toolkit.Helpers\include\StringUtils.h"
 
 using namespace cocos2d;
 
@@ -51,7 +51,7 @@ std::string LanguageManager::localize(std::string _key)
 	std::string result;
 
 	// separar la clave por puntos (para permitir usar objetos complejos)
-	std::vector<std::string> keys = Toolkit::StringUtils::Split(_key, ".");
+	std::vector<std::string> keys = Toolkit::Helpers::StringUtils::Split(_key, ".");
 
 	// obtener la referencia al primer objeto	
 	if (!m_jsonLangdocument.HasMember(keys.front().c_str())) return result;

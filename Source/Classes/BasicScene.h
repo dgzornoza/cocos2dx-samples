@@ -17,7 +17,7 @@ public:
 
 	/** 
 	* Macro que sera desplegada en un metodo estatico 'create' para crear e inicializar la instancia de la clase.
-	* La instancia de la clase debe ser creada invocando el metodo 'MainMenuLayer::create()'
+	* La instancia de la clase debe ser creada invocando el metodo 'Tlayer::create()'
 	*/
 	CREATE_FUNC(BasicScene<Tlayer>);
 

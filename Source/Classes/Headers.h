@@ -1,5 +1,5 @@
-#ifndef __TEST_FILES_H__
-#define __TEST_FILES_H__
+#ifndef __HEADERS_H__
+#define __HEADERS_H__
 
 
 
@@ -14,4 +14,4 @@
 
 
 
-#endif // __TEST_FILES_H__
+#endif // __HEADERS_H__

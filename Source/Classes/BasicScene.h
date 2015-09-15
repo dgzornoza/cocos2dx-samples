@@ -49,7 +49,6 @@ protected:
 	/** Constructor por defecto de la clase (protegido para evitar que se creen instancias desde fuera de la clase, deben crearse mediante el metodo 'BasicScene<Tlayer>::create()')*/
 	BasicScene(void) { };
 
-private:
 
 	/** Capa principal que contiene la escena */
 	Tlayer* m_mainlayer;

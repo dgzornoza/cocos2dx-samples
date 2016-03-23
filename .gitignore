@@ -163,3 +163,5 @@ $RECYCLE.BIN/
 # Excluir directorios especificos
 /Source/cocos2d
 /Source/proj.win32/Debug.win32
+/Source/proj.win10/Samples.VC.db
+/Source/proj.win10/Samples.VC.VC.opendb

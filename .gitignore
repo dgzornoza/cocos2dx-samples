@@ -162,12 +162,4 @@ $RECYCLE.BIN/
 
 # Excluir directorios especificos
 /Source/cocos2d
-/Source/proj.win10
-/Source/proj.ios_mac/ios
-/Source/proj.win8.1-universal
-/Source/proj.android
-/Source/proj.android-studio
-/Source/proj.ios_mac
-/Source/proj.linux
-/Source/CMakeLists.txt
 /Source/proj.win32/Debug.win32
